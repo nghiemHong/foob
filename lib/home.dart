@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:food/detail.dart';
 import 'package:food/widget/custom_widget.dart';
@@ -46,7 +45,7 @@ class _Homepage1State extends State<Homepage1> {
         kg: "2kg",
         price: "10000.0");
 
-    List<Fruit> listofFruit = [fistFruit, banana, mango, berrial];
+    List<Fruit> listofFruit = [ banana, mango, berrial,fistFruit];
     return await this.handler.insertFruit(listofFruit);
   }
 // khoi tao khi Load man hinh
@@ -55,7 +54,7 @@ class _Homepage1State extends State<Homepage1> {
     super.initState();
     this.handler = DatabaseHandler();
     this.handler.initializeDB().whenComplete(() async {
-      // await this.addFruit();
+      await this.addFruit();
       setState(() {});
     });
   }
